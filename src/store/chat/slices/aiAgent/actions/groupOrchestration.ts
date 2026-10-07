@@ -16,9 +16,11 @@ import { type StoreSetter } from '@/store/types';
 const log = debug('lobe-store:group-orchestration');
 
 /**
- * Default maximum rounds for group orchestration
+ * Default maximum rounds for group orchestration.
+ * Sized for multi-stage team pipelines (e.g. the AI Software Team template),
+ * where each stage needs a supervisor decision plus a member response.
  */
-const DEFAULT_MAX_ROUNDS = 10;
+const DEFAULT_MAX_ROUNDS = 24;
 
 // SWR key for polling task status
 const SWR_USE_POLLING_TASK_STATUS = 'SWR_USE_POLLING_TASK_STATUS';

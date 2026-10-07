@@ -165,6 +165,16 @@ export const useCreateMenuItems = () => {
             title: template.title,
           },
           memberConfigs,
+          // Templates like the AI team ship a dedicated supervisor role whose
+          // system prompt drives the pipeline protocol.
+          template.supervisor
+            ? {
+                avatar: template.supervisor.avatar,
+                backgroundColor: template.supervisor.backgroundColor,
+                systemRole: template.supervisor.systemRole,
+                title: template.supervisor.title,
+              }
+            : undefined,
         );
 
         // Switch to the new group
